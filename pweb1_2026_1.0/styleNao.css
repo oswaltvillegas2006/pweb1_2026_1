@@ -1,0 +1,144 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Fundo quase preto */
+    color: #e0e0e0; /* Texto claro */
+    line-height: 1.6;
+}
+
+/* Container Principal */
+body > div {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #8b0000 0%, #330000 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Menu de Navegação */
+nav {
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #8b0000;
+}
+
+nav a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #8b0000;
+}
+
+/* Layout em Colunas (Desktop) */
+@media (min-width: 768px) {
+    body > div {
+        display: grid;
+        grid-template-columns: 250px 1fr 250px;
+        grid-template-areas: 
+            "header header header"
+            "nav nav nav"
+            "aside-l main aside-r"
+            "footer footer footer";
+    }
+    
+    header { grid-area: header; }
+    nav { grid-area: nav; }
+    aside:first-of-type { grid-area: aside-l; border-right: 1px solid #333; }
+    main { grid-area: main; }
+    aside:last-of-type { grid-area: aside-r; border-left: 1px solid #333; }
+    footer { grid-area: footer; }
+}
+
+/* Conteúdo Principal e Laterais */
+main, aside {
+    padding: 20px;
+}
+
+aside h3 {
+    color: #ff3333;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    border-left: 4px solid #8b0000;
+    padding-left: 10px;
+}
+
+aside p, aside ul {
+    margin-bottom: 20px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    padding: 5px 0;
+    border-bottom: 1px solid #333;
+}
+
+/* Estilização das Imagens e Descrições */
+main h2 {
+    margin-bottom: 20px;
+    color: #ff3333;
+}
+
+main img {
+    display: block;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid #333;
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+main img:hover {
+    transform: scale(1.05);
+    border-color: #8b0000;
+}
+
+main p {
+    margin-bottom: 30px;
+    background: #252525;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #121212;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid #333;
+}
