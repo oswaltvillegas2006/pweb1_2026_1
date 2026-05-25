@@ -4,6 +4,11 @@ include_once "../database/db.class.php";
 
 $db = new db('usuario');
 
+if (!empty($_GET['id'])) {
+    $db
+
+}
+
 if (!empty($_POST)) {
     // var_dump($_POST);
     //exit;
@@ -31,6 +36,7 @@ if (!empty($_POST)) {
                 <th scope="col">Nome</th>
                 <th scope="col">Telefone</th>
                 <th scope="col">Email</th>
+                <th scope="col">Ação</th>
             </tr>
         </thead>
         <tbody>
@@ -41,6 +47,8 @@ if (!empty($_POST)) {
                 <td>$item->nome</td>
                 <td>$item->telefone</td>
                 <td>$item->email</td>
+                <td><a href ='UsuarioList.php?id=$item->id'>Deletar</a> </td>
+
             </tr>";
             }
             ?>

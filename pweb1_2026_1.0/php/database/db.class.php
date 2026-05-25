@@ -69,5 +69,16 @@ class db
         } catch (PDOException $e) {
             throw new Exception("Erro ao inserir: ", $e->getMessage());
         }
+
+
+    }
+    public function destroy($id)
+    {
+        $sql = "DELETE * FROM $this->table_name WHERE id=?";
+        $st = $this->conn->prepare($sql);
+        $st->execute([$id]);
+        
+
+        return $st->fetchAll(PDO::FETCH_CLASS);
     }
 }
